@@ -1,1 +1,1 @@
-export * from "./arrayutils";
+export * from './arrayutils'
