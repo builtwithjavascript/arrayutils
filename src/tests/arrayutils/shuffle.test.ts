@@ -1,5 +1,4 @@
 import { useArrayUtils } from '@/arrayUtils'
-import { notDeepEqual } from 'assert'
 import { TestItem, testItemHelper } from '../TestHelpers'
 
 describe('shuffle', () => {

@@ -1,6 +1,6 @@
 {
   "name": "@builtwithjavascript/arrayutils",
-  "version": "1.0.1",
+  "version": "1.0.5",
 	"description": "JavaScript array utils",
 	"author": "Damiano Fusco",
 	"license": "MIT",
@@ -19,6 +19,7 @@
     "dev": "vite",
     "build-types": "tsc src/main.ts --declaration --emitDeclarationOnly --outDir dist",
     "build": "tsc && vite build && npm run build-types",
+    "publish": "npm publish --access public",
     "preview": "vite preview",
     "test": "vitest run",
     "test-watch": "vitest watch",
