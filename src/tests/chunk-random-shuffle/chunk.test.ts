@@ -2,17 +2,17 @@ import { useArrayUtils } from '@/arrayUtils'
 import { TestItem, testItemHelper } from '../TestHelpers'
 
 describe('chunk', () => {
-  const arrayUtils = useArrayUtils<TestItem>()
+  const { chunk } = useArrayUtils<TestItem>()
 
   it('should return empty array when original array is empty', () => {
     const items: TestItem[] = []
-    const chunks = arrayUtils.chunk(items, 3)
+    const chunks = chunk(items, 3)
     expect(chunks.length).toEqual(0)
   })
 
   it('should return empty array when original array is undefined', () => {
     const items: any[] = undefined as any
-    const chunks = arrayUtils.chunk(items as any, 3)
+    const chunks = chunk(items as any, 3)
 
     expect(chunks.length).toEqual(0)
   })
@@ -26,7 +26,7 @@ describe('chunk', () => {
         name: 'X'
       }
     ]
-    const chunks = arrayUtils.chunk(items, 3)
+    const chunks = chunk(items, 3)
 
     expect(chunks.length).toEqual(1)
     expect(chunks[0].length).toEqual(1)
@@ -34,7 +34,7 @@ describe('chunk', () => {
 
   it('should chunk array of items with a reminder of one', () => {
     const items: TestItem[] = testItemHelper.createMockedItems(7)
-    const chunks = arrayUtils.chunk(items, 3)
+    const chunks = chunk(items, 3)
 
     expect(chunks.length).toEqual(3)
     expect(chunks[0].length).toEqual(3)
@@ -44,7 +44,7 @@ describe('chunk', () => {
 
   it('should chunk array of items with a reminder of two', () => {
     const items: TestItem[] = testItemHelper.createMockedItems(8)
-    const chunks = arrayUtils.chunk(items, 3)
+    const chunks = chunk(items, 3)
 
     expect(chunks.length).toEqual(3)
     expect(chunks[0].length).toEqual(3)
@@ -54,7 +54,7 @@ describe('chunk', () => {
 
   it('should chunk array of items evenly', () => {
     const items: TestItem[] = testItemHelper.createMockedItems(9)
-    const chunks = arrayUtils.chunk(items, 3)
+    const chunks = chunk(items, 3)
 
     expect(chunks.length).toEqual(3)
     expect(chunks[0].length).toEqual(3)

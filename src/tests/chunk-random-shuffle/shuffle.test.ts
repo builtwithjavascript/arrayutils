@@ -2,7 +2,7 @@ import { useArrayUtils } from '@/arrayUtils'
 import { TestItem, testItemHelper } from '../TestHelpers'
 
 describe('shuffle', () => {
-  const arrayUtils = useArrayUtils<TestItem>()
+  const { shuffle } = useArrayUtils<TestItem>()
 
   it('should shuffle original array as expected', () => {
     const items: TestItem[] = testItemHelper
@@ -10,7 +10,7 @@ describe('shuffle', () => {
       .sort((a, b) => (Number(a.position) > Number(b.position) ? 1 : -1))
     const initialPositions = items.map((o) => o.position)
 
-    arrayUtils.shuffle(items)
+    shuffle(items)
 
     const currentPositions = items.map((o) => o.position)
     // positions should NOT match as we expect the method to shuffle the array passed in
@@ -23,7 +23,7 @@ describe('shuffle', () => {
       .sort((a, b) => (Number(a.position) > Number(b.position) ? 1 : -1))
     const initialPositions = items.map((o) => o.position)
 
-    const result = arrayUtils.shuffle(items, true)
+    const result = shuffle(items, true)
 
     const currentPositions = items.map((o) => o.position)
     const resultPositions = result.map((o) => o.position)
