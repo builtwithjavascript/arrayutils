@@ -2,7 +2,7 @@ import { useArrayUtils } from '@/arrayUtils'
 import { TestItem, testItemHelper } from '../TestHelpers'
 
 describe('chunk', () => {
-  const arrayUtils = useArrayUtils()
+  const arrayUtils = useArrayUtils<TestItem>()
 
   it('should return empty array when original array is empty', () => {
     const items: TestItem[] = []

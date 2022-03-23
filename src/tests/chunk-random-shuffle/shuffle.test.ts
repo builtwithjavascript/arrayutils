@@ -2,7 +2,7 @@ import { useArrayUtils } from '@/arrayUtils'
 import { TestItem, testItemHelper } from '../TestHelpers'
 
 describe('shuffle', () => {
-  const arrayUtils = useArrayUtils()
+  const arrayUtils = useArrayUtils<TestItem>()
 
   it('should shuffle original array as expected', () => {
     const items: TestItem[] = testItemHelper

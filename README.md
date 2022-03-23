@@ -13,6 +13,8 @@ Contains utils like:
 - shuffle
 - randomArray
 - orderBy
+- filter
+- filterAndOrder
 
 ## Usage
 
